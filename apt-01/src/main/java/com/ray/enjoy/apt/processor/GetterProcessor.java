@@ -1,11 +1,9 @@
 package com.ray.enjoy.apt.processor;
 
+import com.google.auto.service.AutoService;
 import com.ray.enjoy.apt.Getter;
 
-import javax.annotation.processing.AbstractProcessor;
-import javax.annotation.processing.ProcessingEnvironment;
-import javax.annotation.processing.RoundEnvironment;
-import javax.annotation.processing.SupportedSourceVersion;
+import javax.annotation.processing.*;
 import javax.lang.model.SourceVersion;
 import javax.lang.model.element.Element;
 import javax.lang.model.element.ElementKind;
@@ -18,6 +16,7 @@ import java.io.Writer;
 import java.util.Collections;
 import java.util.Set;
 
+@AutoService(Processor.class)
 @SupportedSourceVersion(SourceVersion.RELEASE_17)
 public class GetterProcessor extends AbstractProcessor {
     private ProcessingEnvironment processingEnv;
